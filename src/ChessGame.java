@@ -5,6 +5,7 @@ public class ChessGame extends Player{
     Piece[][] board = new Piece[8][8];
     public ChessGame(String whitePlayer, String blackPlayer) {
         super(whitePlayer, blackPlayer);
+        reset();
     }
 
     private void reset() {
@@ -48,11 +49,8 @@ public class ChessGame extends Player{
         board[6][7] = new Pawn();
     }
 
-    public Piece[][] getBoard() {
-        return board;
-    }
 
-    private boolean isEmptyCell(int row, int col) {
+    private boolean isEmptyPos(int row, int col) {
         return board[row][col] == null;
     }
 
@@ -60,7 +58,7 @@ public class ChessGame extends Player{
         return isCheckmate();
     }
 
-    public boolean isCheckmate() {
+    private boolean isCheckmate() {
         throw new NotImplementedException();
     }
 
